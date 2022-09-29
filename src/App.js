@@ -1,9 +1,10 @@
 import './App.css';
-import Header from "./component/layout/Header/Header.js";
-import {BrowserRouter as Router} from "react-router-dom";
+import Header from "./component/layout/Header/Header";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import WebFont from "webfontloader";
 import React,{useEffect} from 'react';
-import Footer from "./component/layout/Footer/Footer.js"
+import Footer from "./component/layout/Footer/Footer";
+import Home from "./component/Home/Home";
 
 
 function App() {
@@ -15,12 +16,14 @@ function App() {
     })
   },[]);
   return (
-    <>
-   <Router>
-   <Header />
-   <Footer />
-   </Router>
-    </>
+  
+  <Router>
+    <Header></Header>
+  <Routes>
+  <Route  path="/" element={<Home />} />
+  </Routes>
+  <Footer></Footer>
+  </Router>
   );
 }
 
